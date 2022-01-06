@@ -1,0 +1,11 @@
+<%= link_to :log_out, session_path(session[:user_id]), method: :delete %>
+
+<h2>Students</h2>
+
+<%= link_to :add_student, new_student_path, remote: true %>
+<div id='new-student'> </div>
+<br/>
+
+<table id='students-table'>
+  <%= render 'table_data' %>
+</table>

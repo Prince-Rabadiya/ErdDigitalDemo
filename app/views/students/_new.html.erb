@@ -1,0 +1,9 @@
+<%= form_for @student || Student.new, remote: true do |f| %>
+  <%= f.text_field :name, placeholder: 'name' %>
+  <%= f.number_field :suba, placeholder: 'suba', min: 0, max: 100 %>
+  <%= f.number_field :subb, placeholder: 'subb', min: 0, max: 100 %>
+  <%= f.number_field :subc, placeholder: 'subc', min: 0, max: 100 %>
+  <%= f.label :choose_image %>
+  <%= f.file_field :image, placeholder: 'image' %>
+  <%= f.submit 'create' %>
+<% end %>

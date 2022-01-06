@@ -1,0 +1,8 @@
+<% if @errors.present? %>
+  alert("<%= @errors %>")
+<% else %>
+  $('#students-table').html("<%= j render 'table_data' %>")
+  <% if @reset_form %>
+    $("#new-student").html("<%= j render 'new' %>")
+  <% end %>
+<% end %>

@@ -1,0 +1,25 @@
+<h4>Sign up</h4>
+<%= form_for @user do |f| %>
+
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <br/>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br/>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+  <br/>
+  
+  <%= f.submit 'Sign up' %>
+<% end %>
+
+<%= link_to :sign_in, new_session_path %>

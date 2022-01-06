@@ -1,0 +1,22 @@
+<thead>
+  <th> Name </th>
+  <th> Image </th>
+  <th> SubA </th>
+  <th> SubB </th>
+  <th> SubC </th>
+  <th><%= link_to 'Percentage', students_path(sort: :percentage, order: (@order == 'asc') ? :desc : :asc), remote: true %></th>
+  <th> Actions </th>
+</thead>
+<tbody>
+  <% @students.each do |student| %>
+    <tr>
+      <td><%= student.name %></td>
+      <td><%= image_tag url_for(student.image), size: '100x100' %></td>
+      <td><%= student.suba %></td>
+      <td><%= student.subb %></td>
+      <td><%= student.subc %></td>
+      <td><%= student.percentage %></td>
+      <td><%= link_to 'destroy', student_path(student.id), method: :delete, remote: true %></td>
+    </tr>
+  <% end %>
+</tbody>
